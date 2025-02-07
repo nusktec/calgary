@@ -1,0 +1,2293 @@
+/*
+Theme Name: DiviPro
+Theme URI: https://divizoom.com/product/divipro
+Template: Divi
+Author: Divizoom
+Author URI: https://divizoom.com
+Description: Smart. Flexible. Beautiful. Divi child theme pro is the most powerful child theme in our collection.
+Tags: responsive-layout,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar,custom-background,custom-colors,featured-images,full-width-template,post-formats,rtl-language-support,theme-options,threaded-comments,translation-ready
+Version: 2.1.0
+Updated: 2021-11-22
+*/
+
+:root {
+	--divipro-primary-color: #3571ff;
+	--divipro-ecom-primary-color: #ffba00;
+	--divipro-ecom-secondary-color: #333;
+}
+
+/*====== Section divider animation ===========*/
+
+.dizo_section_divider_animation .et_pb_bottom_inside_divider, .dizo_image_animation img {
+	animation: movingDivider 5.25s linear infinite;
+}
+
+.dizo_image_animation img {
+	animation: zoomIn 5.25s linear infinite;
+}
+
+@keyframes movingDivider {
+	0% {
+		background-size: 90% 85px;
+	}
+	20% {
+		background-size: 120% 90px;
+	}
+	40% {
+		background-size: 140% 102px;
+	}
+	80% {
+		background-size: 150% 90px;
+	}
+	100% {
+		background-size: 170% 85px;
+	}
+}
+
+@media all and (min-width:981px) {
+	.dizo_home1_hero_section .et_pb_row {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+/*================ Our Services  =================*/
+
+/* Service-page-2 All features section */
+
+.dizo_features_module.et_pb_blurb::after {
+	content: '';
+	position: absolute;
+	right: -15%;
+	bottom: 0;
+	opacity: 0.2;
+	z-index: 0;
+	border-style: solid;
+	border-width: 80px 80px 0 0;
+	border-color: transparent transparent transparent transparent;
+	transform: scaleX(0);
+	filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, .5));
+	transition: all 0.4s ease;
+}
+
+.dizo_features_module.et_pb_blurb:hover::after {
+	transform: scaleX(1);
+	border-color: transparent #000000 transparent #000000;
+	right: 0;
+}
+
+/*========== Blog & Portfolio Category text ============ */
+
+.dizo-blog-module .et_pb_post {
+	position: relative;
+}
+
+.dizo-blog-module .et_pb_post .post-meta {
+	width: fit-content;
+	padding: 5px 10px;
+	background: var(--divipro-primary-color);
+	border-radius: 5px;
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.dizo-portfolio-module .post-meta a {
+	background-color: var(--divipro-primary-color);
+	color: #ffffff!important;
+	padding: 5px 15px;
+	border-radius: 5px;
+	margin-top: 20px;
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dizo-blog-module .et_pb_post a.entry-featured-image-url {
+	overflow: hidden;
+	background-color: black;
+}
+
+.dizo-blog-module .et_pb_post img {
+	transition: all 0.4s ease 0s;
+}
+
+.dizo-blog-module .et_pb_post:hover img {
+	opacity: 0.5;
+	transform: scale(1.2, 1.2);
+	transition: all 0.4s ease 0s;
+}
+
+.dizo-blog-advance .et_pb_post a.entry-featured-image-url {
+	overflow: hidden;
+	background-color: #000000;
+}
+
+.dizo-blog-advance .et_pb_post img {
+	transition: all 0.4s ease 0s;
+}
+
+.dizo-blog-advance .et_pb_post:hover img {
+	opacity: 0.5;
+	transform: scale(1.2, 1.2);
+	transition: all 0.4s ease 0s;
+}
+
+/*=============================================================
+================== Blog module border hover ===================*/
+
+.dizo_blog_hover_reveal_border .et_pb_post {
+	position: relative;
+}
+
+.dizo_blog_hover_reveal_border .et_pb_post:before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	background: var(--divipro-primary-color, #b38f66);
+	height: 5px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	transform-origin: left center;
+	transform: scaleX(0);
+	transition: all 0.5s ease-in-out;
+	z-index: 99;
+}
+
+.dizo_blog_hover_reveal_border .post-content:before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	background: var(--divipro-primary-color, #b38f66);
+	height: 5px;
+	width: 100%;
+	bottom: 0;
+	right: 0;
+	transform-origin: right center;
+	transform: scaleX(0);
+	transition: all 0.5s ease-in-out;
+}
+
+.dizo_blog_hover_reveal_border .entry-title:after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	background: var(--divipro-primary-color, #b38f66);
+	height: 100%;
+	width: 5px;
+	top: 0;
+	left: 0;
+	transform-origin: top center;
+	transform: scaleY(0);
+	transition: all 0.5s ease-in-out;
+	z-index: 99;
+}
+
+.dizo_blog_hover_reveal_border .post-content:after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	background: var(--divipro-primary-color, #b38f66);
+	height: 100%;
+	width: 5px;
+	bottom: 0;
+	right: -1px;
+	transform-origin: bottom center;
+	transform: scaleY(0);
+	transition: all 0.5s ease-in-out;
+	z-index: 99;
+}
+
+.et_pb_post:hover .post-content:before, .et_pb_post:hover:before {
+	transform: scaleX(1);
+}
+
+.et_pb_post:hover .post-content:after, .et_pb_post:hover .entry-title:after {
+	transform: scaleY(1);
+}
+
+.dizo_blog_hover_reveal_border .published {
+	font-size: 18px;
+	padding-bottom: 20px;
+	display: inline-block;
+}
+
+.dizo_blog_hover_reveal_border .et_pb_post {
+	padding: 30px;
+	min-height: 480px;
+}
+
+.et_pb_post .entry-title a:hover {
+	color: var(--divipro-primary-color, #b38f66);
+}
+
+.dizo_blog_hover_reveal_border .more-link {
+	margin-top: 20px;
+	display: table;
+	font-size: 16px;
+	font-weight: 700;
+	/*font-family: fantasy;*/
+}
+
+/*============ post comment form design ============ */
+
+.dizo-comment-form #comment-wrap .comment-form p.comment-form-author {
+	width: 49%;
+	float: left;
+	margin-right: 18px;
+}
+
+.dizo-comment-form #comment-wrap .comment-form p.comment-form-author input {
+	width: 100%;
+}
+
+.dizo-comment-form #comment-wrap .comment-form p.comment-form-email {
+	width: 49%;
+	display: inline-block;
+}
+
+.dizo-comment-form #comment-wrap .comment-form p.comment-form-email input {
+	width: 100%;
+}
+
+.dizo-comment-form #comment-wrap .comment-form p.comment-form-url input {
+	width: 100%;
+}
+
+@media (max-width: 1250px) {
+	.dizo-comment-form #comment-wrap .comment-form p.comment-form-author {
+		width: 100%;
+		float: none;
+		margin-right: 0;
+	}
+	.dizo-comment-form #comment-wrap .comment-form p.comment-form-email {
+		width: 100%;
+		display: block;
+	}
+}
+
+/*============ footer item ============ */
+
+.dizo-footer-item a {
+	width: fit-content;
+	padding-bottom: 5px;
+	transition: all .4s linear!important;
+	background: linear-gradient(to bottom, #fff 0%, #fff 98%);
+	background-size: 0 2px;
+	background-repeat: no-repeat;
+	background-position: left 100%;
+}
+
+.dizo-footer-item:hover a {
+	background-size: 100% 2px;
+	transition: all .4s linear!important;
+}
+
+/*=============== pricing page - pricing table ===================*/
+
+.dizo-inactive-content {
+	display: none!important;
+}
+
+.dizo-active-button, .dizo-inactive-button {
+	cursor: pointer;
+}
+
+.dizo_active {
+	background-color: var(--divipro-primary-color);
+}
+
+.dizo_active .et_pb_text_inner, .dizo_active.et_pb_blurb .et_pb_blurb_content .et_pb_blurb_container .et_pb_module_header, .dizo_active .et_pb_blurb_description, .dizo_active .et-pb-icon {
+	color: #fff!important;
+}
+
+/*================= single project page gallery slider arrows design =============*/
+
+.dizo-single-project-gallery .et-pb-slider-arrows a {
+	background-color: var(--divipro-primary-color);
+	color: #ffffff!important;
+	border-radius: 5px;
+}
+
+.dizo-single-project-gallery .et-pb-controllers a {
+	background-color: var(--divipro-primary-color)!important;
+	width: 10px;
+	height: 10px;
+}
+
+/*=======================================
+	============= Home 2 ====================*/
+
+/*== Hero section icon ====*/
+
+.dizo-soft-button .et_contact_bottom_container {
+	width: 100%;
+	float: none;
+	padding-left: 3%;
+}
+
+.dizo_home_2_icon .et-pb-icon {
+	position: relative!important;
+	cursor: pointer;
+}
+
+.dizo_home_2_icon .et-pb-icon:before, .dizo_home_2_icon .et-pb-icon:after {
+	content: '';
+	position: absolute;
+	border: 2px solid;
+	border-color: var(--divipro-primary-color);
+	animation: zoomBig 3.25s linear infinite;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 120px;
+	height: 120px;
+	margin-left: -24px;
+	margin-top: -24px;
+	z-index: -1;
+	background-position: center;
+}
+
+.dizo_home_2_icon.divipro_landing_page_icon .et-pb-icon:before, .dizo_home_2_icon.divipro_landing_page_icon .et-pb-icon:after {
+	border-color: #fff;
+}
+
+.dizo_home_2_icon .et-pb-icon:before {
+	-webkit-animation-delay: .75s;
+	animation-delay: .75s;
+}
+
+.dizo_home_2_icon .et-pb-icon:after {
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+}
+
+@keyframes zoomBig {
+	0% {
+		transform: scale(0);
+		opacity: 0
+	}
+	20% {
+		transform: scale(0.2);
+		opacity: 0.5;
+	}
+	40% {
+		transform: scale(0.5);
+		opacity: 1;
+	}
+	60% {
+		transform: scale(0.7);
+		opacity: 0.5;
+	}
+	80% {
+		transform: scale(0.9);
+		opacity: 0.3;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0.2;
+	}
+}
+
+.dizo_home_2_services_color {
+	background-position: 50% 0%;
+	transition: 750ms!important;
+}
+
+.dizo_home_2_services_color:hover {
+	color: #fff!important;
+	background-position: 0%;
+}
+
+.dizo_home_2_services_color:hover .et_pb_module_header {
+	color: inherit!important;
+}
+
+/*===== Home 2 image shape ======*/
+
+.dizo_home2_image_shape:after {
+	content: '';
+	background: var(--divipro-primary-color);
+	width: 86%;
+	height: 85%;
+	bottom: 25px;
+	left: -9px;
+	position: absolute;
+	z-index: -1;
+	border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+	animation: morph 8s ease-in-out infinite;
+}
+
+.dizo_home2_image_shape:before {
+	content: '';
+	background: #273540;
+	position: absolute;
+	width: 76%;
+	height: 97%;
+	left: 13px;
+	top: 13px;
+	bottom: 42px;
+	z-index: -1;
+	border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+	animation: morph 5s ease-in-out infinite;
+}
+
+@keyframes morph {
+	0% {
+		border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	}
+	50% {
+		border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+	}
+	100% {
+		border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	}
+}
+
+/*===== Sub text divider =====*/
+
+.dizo_sub_text_divider:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 12px;
+	height: 4px;
+	width: 76px;
+	background: var(--divipro-primary-color);
+}
+
+.dizo_sub_text_divider:after {
+	content: '';
+	position: absolute;
+	left: 15px;
+	top: 11px;
+	height: 6px;
+	width: 12px;
+	background: #fff;
+}
+
+/*==== Image hover===*/
+
+.dizo_home2_img {
+	overflow: hidden;
+}
+
+.dizo_home2_img .et_pb_image_wrap img {
+	transform: scale(1);
+	transition: 0.75s ease;
+}
+
+.dizo_home2_img:hover .et_pb_image_wrap img {
+	transform: scale(1.3);
+}
+
+/*==== pricing ======*/
+
+.dizo_home2_pricing .et_pb_blurb_content, .dizo_home2_pricing_text .et_pb_blurb_content {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: row-reverse;
+	margin-bottom: 0;
+}
+
+.dizo_home2_pricing_text .et_pb_main_blurb_image {
+	margin-bottom: 0;
+}
+
+.dizo_home2_pricing .et_pb_module_header {
+	padding: 10px 23px 11px 23px;
+	background-color: var(--divipro-primary-color);
+	border-radius: 0px 30px 30px 0px;
+}
+
+.dizo_home2_pricing_text .et_pb_blurb_content {
+	justify-content: space-around;
+}
+
+.dizo_home2_pricing_text .et_pb_main_blurb_image {
+	margin-top: -10px;
+}
+
+/*======================= Digital Agency Site Testimonial design ===========================*/
+
+.dipro-new-testimonial .et_pb_testimonial {
+	width: 420px!important;
+}
+
+.dipro-new-testimonial .et_pb_testimonial_portrait {
+	float: none;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.dipro-new-testimonial .et_pb_testimonial_description {
+	margin: 0!important;
+}
+
+.dipro-new-testimonial .et_pb_testimonial_author {
+	margin-top: 10px;
+}
+
+/*======================== Financial Planning Site CSS==========
+===============================================================*/
+
+/*========================== Home section down arrow ==========================*/
+
+.dipro-home-icon .et-pb-icon {
+	padding: 10px!important;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/*=============================== About section blurb design ============================*/
+
+.dipro-about-section-blurb .et_pb_blurb_container {
+	padding: 30px 20px;
+}
+
+.dipro-about-section-blurb:hover .et_pb_image_wrap img {
+	opacity: 0.7;
+	transform: scale(1.2, 1.2);
+	transition: all 0.4s ease 0s;
+}
+
+.dipro-about-section-blurb .et_pb_main_blurb_image {
+	overflow: hidden;
+	background-color: black;
+}
+
+.dipro-about-section-blurb .et_pb_image_wrap img {
+	transition: all 0.4s ease 0s;
+}
+
+.dipro-about-section-blurb .et_pb_image_wrap {
+	position: relative;
+}
+
+.dipro-about-section-blurb .et_pb_image_wrap:before {
+	content: '\21D2';
+	position: absolute;
+	font-family: 'Poppins';
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	color: #000000;
+	background-color: #ffffff;
+	z-index: 2;
+	border-radius: 100%;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	transition: all 0.8s ease 0s;
+	opacity: 0;
+}
+
+.dipro-about-section-blurb:hover .et_pb_image_wrap:before {
+	opacity: 1;
+}
+
+/*================================= Service Section ===============================*/
+
+.dipro-services-blurb .et_pb_blurb_content img {
+	width: 100px;
+	height: 100px;
+	transition: all 0.4s ease 0s;
+}
+
+.dipro-services-blurb .et_pb_blurb_content .et_pb_main_blurb_image {
+	width: 110px;
+}
+
+.dipro-services-blurb:hover .et_pb_image_wrap img {
+	opacity: 0.7;
+	transform: scale(1.3, 1.3);
+}
+
+.dipro-services-blurb .et_pb_image_wrap {
+	overflow: hidden;
+	background-color: #000000;
+}
+
+/* =============================== Testimonial ============================ */
+
+.dipro-financial-testimonial .et_pb_main_blurb_image {
+	width: 150px;
+	margin-top: -120px;
+	z-index: 2;
+}
+
+.dipro-financial-testimonial .et_pb_blurb_description h3 {
+	padding-top: 50px;
+	font-family: 'Fira Sans';
+	font-weight: 600;
+	font-size: 22px;
+	letter-spacing: 1px;
+	line-height: 1.4rem;
+	color: #8bb867;
+}
+
+.dipro-financial-testimonial .et_pb_blurb_description h4 {
+	font-family: 'Merriweather';
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.4rem;
+	color: #2f2f2f;
+}
+
+/*============================== Hero section below blurb design =================================*/
+
+.dipro-blurb-column .dipro-blurb {
+	transition: all 0.4s ease-in-out;
+	opacity: 1;
+	min-height: 250px;
+}
+
+.dipro-blurb-column:hover .dipro-blurb {
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-100%);
+}
+
+.dipro-blurb-column .dipro-blurb-content {
+	position: absolute;
+	transform: translateY(0%);
+	opacity: 0;
+	transition: all 0.4s ease-in-out;
+}
+
+.dipro-blurb-column:hover .dipro-blurb-content {
+	opacity: 1;
+	transform: translateY(-100%);
+}
+
+/* ================================ Testimonial Carousel ============================ */
+
+.dipro_coverflow_effect_carousel .dipro-financial-testimonial {
+	width: 600px!important;
+	height: 415px!important;
+}
+
+/*======================== Media Query =============================*/
+
+@media (max-width: 768px) {
+	.dipro_coverflow_effect_carousel .dipro-financial-testimonial {
+		width: 300px!important;
+		height: 450px!important;
+	}
+	.dipro-financial-testimonial .et_pb_main_blurb_image {
+		width: 120px;
+	}
+	.dipro-financial-testimonial .et_pb_blurb_description h3 {
+		padding-top: 30px;
+		font-size: 18px;
+	}
+	.dipro-blurb-column .dipro-blurb {
+		min-height: 0px;
+	}
+}
+
+/*=============================== Magnific popup ==================================*/
+
+.mfp-content {
+	max-width: 1200px;
+}
+
+button.mfp-close, button.mfp-arrow {
+	background: #fff!important;
+}
+
+.mfp-wrap .mfp-container .mfp-content button:not(.et_pb_button) {
+	transition: 0.4s ease;
+	top: 27px;
+}
+
+.mfp-wrap .mfp-container .mfp-content button:hover:not(.et_pb_button) {
+	background: #ffe2e2!important;
+}
+
+.mfp-wrap .mfp-container .mfp-arrow:after {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #333;
+}
+
+.dizo_video_popup, .dizo_popup_form, .dizo_popup_form_menu, .dizo_popup_form_1, .dizo_popup_form_2, .dizo_popup_form_3, .dizo_popup_form_4, .dizo_popup_form_5, .dizo_map_popup {
+	display: none!important;
+}
+
+.et-fb-preview--desktop .dizo_video_popup, .et-fb-preview--desktop .dizo_popup_form, .et-fb-preview--desktop .dizo_popup_form_menu, .et-fb-preview--desktop .dizo_popup_form_1, .et-fb-preview--desktop .dizo_popup_form_2, .et-fb-preview--desktop .dizo_popup_form_3, .et-fb-preview--desktop .dizo_popup_form_4, .et-fb-preview--desktop .dizo_popup_form_5, .et-fb-preview--desktop .dizo_map_popup {
+	display: block!important;
+}
+
+.mfp-wrap .dizo_video_popup, .mfp-wrap .dizo_map_popup {
+	display: block!important;
+}
+
+.mfp-wrap .dizo_popup_form, .mfp-wrap .dizo_popup_form_menu, .mfp-wrap .dizo_popup_form_1, .mfp-wrap .dizo_popup_form_2, .mfp-wrap .dizo_popup_form_3, .mfp-wrap .dizo_popup_form_4, .mfp-wrap .dizo_popup_form_5 {
+	display: flex!important;
+}
+
+@media all and (max-width:767px) {
+	.mfp-wrap .dizo_popup_form, .mfp-wrap .dizo_popup_form_menu, .mfp-wrap .dizo_popup_form_1, .mfp-wrap .dizo_popup_form_2, .mfp-wrap .dizo_popup_form_3, .mfp-wrap .dizo_popup_form_4, .mfp-wrap .dizo_popup_form_5 {
+		flex-direction: column;
+		width: 100%!important;
+	}
+}
+
+/*=========== magnific popup Divi form button ==========*/
+
+.mfp-wrap .mfp-container .mfp-content button.et_pb_button {
+	background: var(--divipro-primary-color);
+	color: #fff;
+	border: 2px solid var(--divipro-primary-color);
+	border-radius: 5px;
+	padding: 8px 35px;
+}
+
+.mfp-wrap .mfp-container .mfp-content button.et_pb_button:hover {
+	background: #fff!important;
+	color: var(--divipro-primary-color);
+	border-color: #fff;
+}
+
+/*======= Home 2 About us ==========*/
+
+.dizo_eliminate_padding_bottom h1, .dizo_eliminate_padding_bottom h2, .dizo_eliminate_padding_bottom h3, .dizo_eliminate_padding_bottom h4, .dizo_eliminate_padding_bottom h5, .dizo_eliminate_padding_bottom h6 {
+	padding-bottom: 0;
+}
+
+.dizo_home2_image img {
+	object-fit: cover;
+}
+
+.dizo_pattern {
+	position: absolute;
+	z-index: 0;
+	animation: zoomIn 5s linear infinite;
+}
+
+.pattern_1 {
+	top: 0;
+	left: -100px;
+}
+
+.pattern_2 {
+	bottom: 0;
+	right: -50px;
+}
+
+@keyframes zoomIn {
+	0% {
+		transform: scale(0.8);
+	}
+	50% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0.8);
+	}
+}
+
+.dizo_image_padding img {
+	padding: 15px;
+}
+
+/*=========== Home 2 Services ================*/
+
+.dizo_services_rotate .et_pb_blurb {
+	perspective: 1500px;
+	backface-visibility: hidden;
+}
+
+.dizo_services_rotate .et_pb_blurb, .dizo_services_rotate .et_pb_main_blurb_image, .dizo_services_rotate .et_pb_blurb .et_pb_module_header, .dizo_services_rotate .dizo_services_btn {
+	transition: all 0.45s;
+}
+
+.dizo_services_rotate:hover .et_pb_blurb {
+	transform: translate3d(0%, -10%, 0px);
+}
+
+.dizo_services_rotate:hover .et_pb_main_blurb_image {
+	transform: scale(0);
+}
+
+.dizo_services_rotate:hover .et_pb_blurb, .dizo_services_rotate:hover .et_pb_blurb .et_pb_module_header {
+	color: #fff!important;
+}
+
+.dizo_services_btn {
+	padding: 12px 35px;
+	background: #f7f7f7;
+	color: var(--divipro-primary-color);
+	border-radius: 40px;
+	opacity: 0;
+}
+
+.dizo_services_rotate:hover .dizo_services_btn {
+	opacity: 1;
+}
+
+/*========= single services page==========*/
+
+.dizo_home_2_single_services_page_navigation .et_pb_blurb_content {
+	display: flex;
+}
+
+.dizo_home_2_single_services_page_navigation .et_pb_main_blurb_image {
+	order: 2;
+	margin-bottom: 0;
+}
+
+.dizo_home_2_single_services_page_navigation .et_pb_blurb_container {
+	order: 1
+}
+
+/*=============Blog==============*/
+
+.dizo_home2_blog .et_pb_post {
+	box-shadow: 0 2px 20px rgb(0 0 0 / 8%);
+	padding: 20px;
+}
+
+.dizo_home2_blog .et_pb_post a img, .dizo_home2_blog .et_pb_post {
+	border-radius: 15px!important;
+}
+
+.dizo_home2_blog a[rel='tag'] {
+	position: absolute;
+	top: 27px;
+	right: 30px;
+	background: #06155f!important;
+	padding: 6px 35px;
+	color: #fff!important;
+	border-radius: 30px;
+	font-weight: 700;
+}
+
+.dizo_home2_blog .more-link {
+	margin-top: 20px;
+}
+
+.dizo_home2_blurb_image_size .et_pb_blurb_content {
+	display: flex;
+}
+
+.dizo_home2_blurb_image_size .et_pb_main_blurb_image {
+	flex-basis: 30%;
+}
+
+.dizo_home2_blurb_image_size .et_pb_blurb_container {
+	flex-basis: 70%;
+}
+
+/*===================== Project page ============================*/
+
+.dizo-portfolio-module .et_pb_portfolio_filter a {
+	border: 1px solid #f5f6f7!important;
+	border-radius: 30px!important;
+	box-shadow: 0px 20px 80px 0px rgb(109 112 222 / 49%);
+	margin: 10px!important;
+}
+
+/*====================================================================
+	=================== Element page blurb icon position ================*/
+
+.dizo_element_blurb.et_pb_blurb {
+	overflow: visible!important;
+}
+
+.dizo_element_blurb .et_pb_blurb_content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: unset;
+}
+
+.dizo_element_blurb .et_pb_main_blurb_image {
+	position: absolute;
+	top: -30px;
+}
+
+.dizo_element_blurb .et_pb_blurb_container {
+	padding-top: 25px;
+}
+
+.dizo_element_blurb .et-pb-icon-circle {
+	border-radius: 75% 82% 76% 64%;
+	padding: 15px;
+}
+
+/*======================================================================
+======================== Tab design horizontal =========================
+========================================================================*/
+
+.divipro_tab ul.et_pb_tabs_controls {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.divipro_tab .et_pb_all_tabs {
+	padding-top: 20px;
+}
+
+.divipro_tab ul.et_pb_tabs_controls li {
+	flex: 1;
+	text-align: center;
+	display: flex!important;
+	justify-content: center;
+	align-items: center;
+	padding: 24px 0px;
+	height: 0!important;
+}
+
+/*======== Horizontal Design 1 ==========*/
+
+.et_pb_tabs.divipro_tab_horizontal_1 {
+	border: none!important;
+}
+
+.divipro_tab_horizontal_1 ul.et_pb_tabs_controls {
+	background: transparent!important;
+}
+
+.divipro_tab_horizontal_1 ul.et_pb_tabs_controls li {
+	border-radius: 36px;
+	box-shadow: 0px 5px 20px -10px rgb(0 0 0 / 20%);
+	border-right: none;
+	margin-bottom: 20px;
+	margin-right: 30px;
+}
+
+@media (max-width: 767px) {
+	.divipro_tab_horizontal_1 .et_pb_tabs_controls {
+		margin-left: 20px;
+	}
+	.divipro_tab_horizontal_1 .et_pb_tabs_controls li {
+		border-bottom: none;
+	}
+}
+
+/*==================== Horizontal Design 2 =====================*/
+
+.divipro_tab_horizontal_2 ul.et_pb_tabs_controls li {
+	border-right: 1px solid #fdf4f457;
+	border-bottom: 1px solid #fdf4f457;
+	padding: 26px;
+}
+
+/*==================================================
+	===================== Tab design Vertical ==========*/
+
+.divipro_tab_vertical.et_pb_tabs {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.divipro_tab_vertical.et_pb_tabs ul.et_pb_tabs_controls {
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.divipro_tab_vertical.et_pb_tabs ul.et_pb_tabs_controls li {
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.divipro_tab_vertical.et_pb_tabs .et_pb_all_tabs {
+	padding-top: 0;
+}
+
+@media (max-width:767px) {
+	.divipro_tab_vertical.et_pb_tabs ul.et_pb_tabs_controls {
+		flex-direction: row;
+	}
+}
+
+/*=============================  Left Menu =====================*/
+
+.divipro_tab_left_vertical.et_pb_tabs ul.et_pb_tabs_controls {
+	flex: 1;
+}
+
+.divipro_tab_left_vertical.et_pb_tabs .et_pb_all_tabs {
+	flex: 4;
+}
+
+@media (max-width:767px) {
+	.divipro_tab_left_vertical.et_pb_tabs {
+		flex-direction: column;
+	}
+}
+
+/*=============================  Right Menu =====================*/
+
+.divipro_tab_right_vertical.et_pb_tabs {
+	flex-direction: row-reverse;
+}
+
+.divipro_tab_right_vertical.et_pb_tabs ul.et_pb_tabs_controls {
+	flex: 1;
+}
+
+.divipro_tab_right_vertical.et_pb_tabs .et_pb_all_tabs {
+	flex: 4;
+}
+
+@media (max-width:767px) {
+	.divipro_tab_right_vertical.et_pb_tabs {
+		flex-direction: column;
+	}
+}
+
+/*======================================================================
+	======================== Carousel Design ===============================
+	========================================================================*/
+
+.dipro_carousel {
+	--arrow-position-desktop: -225px;
+	--arrow-position-mobile: -350px;
+}
+
+.dipro_pagination {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dipro_pagination .swiper-pagination-bullet {
+	margin-right: 10px;
+}
+
+.dipro_pagination .swiper-pagination-bullet-active {
+	background: var(--divipro-primary-color);
+}
+
+.dipro_carousel .swiper-button-next, .dipro_carousel .swiper-button-prev {
+	position: absolute;
+	top: var(--arrow-position-desktop);
+	background: var(--divipro-primary-color);
+	padding: 30px;
+}
+
+@media (max-width:767px) {
+	.dipro_carousel .swiper-button-next, .dipro_carousel .swiper-button-prev {
+		top: var(--arrow-position-mobile);
+	}
+	.dipro_carousel .swiper-button-next {
+		right: 10px;
+	}
+	.dipro_carousel .swiper-button-prev {
+		left: auto;
+		right: 90px;
+	}
+}
+
+.dipro_carousel .swiper-button-next:after, .dipro_carousel .swiper-button-prev:after {
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.dipro_carousel_arrow_position .swiper-button-next {
+	right: 10px;
+}
+
+.dipro_carousel_arrow_position .swiper-button-prev {
+	left: auto;
+	right: 90px;
+}
+
+/*==== bottom arrow ====*/
+
+.dipro_carousel_bottom_arrow .swiper-button-next, .dipro_carousel_bottom_arrow .swiper-button-prev {
+	top: -15px;
+}
+
+/*============== Multicolumn Carousel =========*/
+
+.swiper-container.dipro_multicolumnSwiper {
+	width: 100%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dipro_multicolumnSwiper.swiper-container-multirow-column>.swiper-wrapper {
+	flex-direction: row!important;
+}
+
+/*========= Coverflow Effect Carousel ==========*/
+
+.dipro_coverflow_effect_carousel .swiper-slide {
+	width: 300px;
+	height: 300px;
+}
+
+/*======================= Custom Download btn ===============*/
+
+.divipro_btn_wrapper {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.divipro_btn_wrapper .divipro_btn {
+	flex: 1;
+	padding: 12px 25px;
+	background: #134c5f;
+	color: #fff;
+	margin-right: 15px;
+	border-radius: 10px;
+	font-weight: 700;
+	text-align: center;
+	transition: 0.4s ease;
+}
+
+.divipro_btn_wrapper .divipro_btn:hover {
+	background: #196782;
+	transform: translateY(-10px);
+}
+
+.divipro_image_fit img {
+	object-fit: cover;
+}
+
+/**============================== Image hover design =============================*/
+
+/*==== Content reveal =====*/
+
+.divipro_image_hover_content_reveal {
+	overflow: hidden;
+}
+
+.divipro_image_hover_content_reveal .et_pb_module_header {
+	transition: 0.4s ease-in-out;
+}
+
+.divipro_image_hover_content_reveal .et_pb_blurb_description {
+	transform: translateY(-100%);
+	opacity: 0;
+	transition: 0.4s ease-in-out;
+}
+
+.divipro_image_hover_content_reveal:hover .et_pb_blurb_description {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.divipro_image_hover_content_reveal:hover .et_pb_module_header {
+	transform: translateY(-100%);
+	opacity: 0;
+}
+
+/*========= image swap ===========*/
+
+.divipro_image_hover_swap {
+	overflow: hidden;
+}
+
+.divipro_image_hover_swap img {
+	transform: scale(1.2);
+	transition: 0.5s ease-in-out;
+}
+
+.divipro_image_hover_swap:hover img {
+	transform: scale(1);
+}
+
+/*=== When activate the hover state ========*/
+
+.divipro_image_hover_swap.et_multi_view__hover_selector img {
+	transform: scale(1.2);
+}
+
+.divipro_image_hover_swap.et_multi_view__hovered img {
+	transform: scale(1);
+}
+
+/*============================== Menu Design ==========================*/
+
+/*======= vertical menu =========== */
+
+/* .divipro_vertical_menu {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 100vh;
+	z-index: 999999999999999!important;
+}
+
+.divipro_vertical_menu .et-menu {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (max-width:1024px) {
+	.divipro_vertical_menu {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		position: relative;
+		width: 100%;
+		height: auto;
+	}
+	.divipro_vertical_menu .et-menu {
+		flex-direction: row;
+	}
+}
+
+@media (min-width:1025px) {
+	.divipro_vertical * .et_pb_section:not(.divipro_vertical_menu) {
+		margin-left: 200px;
+	}
+} */
+
+/*===================== Team Member ==================*/
+
+.divipro_team_member_image_slideup .et_pb_team_member_image {
+	transform: translate3d(0, 0, 0);
+	margin: 0;
+	transition: 0.4s ease-in-out;
+}
+
+.divipro_team_member_image_slideup:hover .et_pb_team_member_image {
+	transform: translate3d(0px, -100%, 0px);
+}
+
+.divipro_team_member_image_slideup .et_pb_team_member_description {
+	padding: 20px;
+	background: #fff;
+}
+
+/*=================================================================
+	============================ Footer ============================*/
+
+.dizo_divipro_footer_menu ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dizo_divipro_footer_menu ul li {
+	padding: 10px;
+}
+
+/*============================================== Woocoommerce ===========================================*/
+
+.main_title {
+	background: var(--divipro-ecom-secondary-color,#333);
+	color: #fff;
+	padding: 20px;
+}
+
+.divipro_ecom_tab_active {
+	border-bottom: 2px solid var(--divipro-ecom-primary-color, #ffba00);
+}
+
+.dipro_ecom_tab_button.divipro_ecom_tab_active .et_pb_text_inner h2 {
+	color: var(--divipro-ecom-primary-color, #ffba00)!important;
+}
+
+.woocommerce .woocommerce-error, .woocommerce .woocommerce-info, .woocommerce .woocommerce-message {
+	background: var(--divipro-ecom-secondary-color,#333)!important;
+}
+
+/*================ Dropdown menu =================*/
+
+.dipro_ecom_category_menu {
+	display: none;
+}
+
+.dipro_ecom_dropdown_menu_column:hover .dipro_ecom_category_menu {
+	display: block;
+}
+
+.dipro_ecom_dropdown_menu_column:hover .dipro_ecom_dropdown_menu {
+	background: var(--divipro-ecom-primary-color, #ffba00);
+}
+
+.dipro_ecom_dropdown_menu_column:hover .dipro_ecom_dropdown_menu .et_pb_blurb_content .et_pb_blurb_container .et_pb_module_header, .dipro_ecom_dropdown_menu_column:hover .et_pb_image_wrap .et-pb-icon {
+	color: #fff!important;
+}
+
+.dipro_ecom_dropdown_menu {
+	cursor: pointer;
+}
+
+#et-boc .dipro_ecom_category_menu .et_pb_menu__wrap, #et-boc .dipro_ecom_category_menu .et_pb_menu__menu {
+	display: block;
+}
+
+#et-boc .dipro_ecom_category_menu #menu-category {
+	display: block!important;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	border-radius: 0;
+	border: none;
+	padding: 0!important;
+	box-shadow: 0 10px 30px rgb(0 0 0 / 5%);
+	position: absolute;
+	margin: 0!important;
+}
+
+#et-boc .dipro_ecom_category_menu #menu-category .menu-item {
+	padding: 0!important;
+	margin: 0!important;
+}
+
+#et-boc .dipro_ecom_category_menu #menu-category .menu-item a {
+	display: block;
+	width: 100%;
+	position: relative;
+	text-decoration: none;
+	border-bottom: 1px solid #ebebeb;
+	border-top: none;
+	padding: 0.9rem 1.9rem;
+}
+
+#et-boc .dipro_ecom_category_menu #menu-category .menu-item a:after {
+	top: 10px;
+	transform: rotate(270deg);
+}
+
+#et-boc .dipro_ecom_category_menu #menu-category .menu-item .sub-menu {
+	left: 100%!important;
+	display: block;
+	top: 0;
+	border-top: 2px solid var(--divipro-ecom-primary-color, #ffba00);
+	padding: 0;
+}
+
+#et-boc .dipro_ecom_category_menu #menu-category .menu-item .sub-menu li, #et-boc .dipro_ecom_category_menu #menu-category .menu-item .sub-menu li a {
+	width: 100%;
+	display: block;
+}
+
+/*================ Shop image zooming ================*/
+
+.dipro-shop-module .woocommerce ul.products li.product:hover a .et_shop_image img {
+	transform: scale(1.2, 1.2);
+	transition: all 0.4s ease-in-out;
+}
+
+.dipro-shop-module .woocommerce ul.products li.product a .et_shop_image {
+	overflow: hidden;
+	transition: all 0.4s ease-in-out;
+	border-radius: 5px;
+}
+
+.dipro-shop-module .woocommerce ul.products li.product a .et_shop_image img {
+	transition: all 0.4s ease-in-out;
+}
+
+.dipro-shop-module ul.products li.product a .et_shop_image img {
+	margin: 0!important;
+}
+
+.dipro-shop-module .woocommerce ul.products li.product .onsale {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%!important;
+}
+
+/*===================== Switch Event row ====================*/
+
+.dipro-switch-event-row {
+	display: flex;
+	justify-content: center;
+}
+
+.dipro-switch-event-row .et_pb_column {
+	width: auto!important;
+}
+
+.dipro-switch-event-row .et_pb_column .et_pb_text {
+	cursor: pointer;
+}
+
+.divipro_ecom_tab_active {
+	border-bottom: 2px solid var(--divipro-ecom-primary-color, #ffba00);
+}
+
+.dipro_ecom_tab_button.divipro_ecom_tab_active .et_pb_text_inner h2 {
+	color: var(--divipro-ecom-primary-color, #ffba00)!important;
+}
+
+/*=================== Countdown timer design =====================*/
+
+.dipro-countdown-timer .section p.value {
+	background-color: var(--divipro-ecom-primary-color, #ffba00);
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.dipro-countdown-timer .sep {
+	padding: 0 10px;
+}
+
+/*================== Column Button positioning ===================*/
+
+.et_pb_button_module_wrapper {
+	width: 100%;
+	left: 0!important;
+}
+
+.et_pb_button_module_wrapper a.dipro-column-button {
+	width: 100%!important;
+	transform: translatex(0)!important;
+}
+
+/*====================== Add to cart button design ===========================*/
+
+.dipro-add-to-cart-button .woocommerce li a.button {
+	font-family: inherit;
+	font-weight: 400;
+	font-size: 14px;
+	border: 2px solid var(--divipro-ecom-secondary-color, #333333);
+	border-radius: 5px;
+	color: #ffffff;
+	background-color: var(--divipro-ecom-secondary-color, #333333);
+	padding: 5px 20px;
+}
+
+.dipro-add-to-cart-button .woocommerce li a.button:hover {
+	background-color: var(--divipro-ecom-primary-color, #ffba00);
+	border: 2px solid var(--divipro-ecom-primary-color, #ffba00);
+}
+
+.dipro-add-to-cart-button .woocommerce li a.button:hover::after {
+	opacity: 0!important;
+}
+
+.woocommerce .dipro-add-to-cart-button a.added_to_cart {
+	padding: 5px 8px;
+	margin-left: 5px;
+	background-color: var(--divipro-ecom-primary-color, #ffba00);
+	color: #ffffff;
+	font-family: inherit;
+	font-weight: 400;
+	font-size: 12px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: inline-block;
+	transition: 0.3s ease;
+}
+
+.woocommerce .dipro-add-to-cart-button a.added_to_cart:hover {
+	background-color: var(--divipro-ecom-secondary-color, #333333);
+	;
+}
+
+.dipro-shop-module .woocommerce ul.products li.product {
+	padding: 20px;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+}
+
+.woocommerce-page .dipro-single-product-width ul.products li.product {
+	width: 100%!important;
+}
+
+/*================== Shop Page Design ================*/
+
+.dipro-shop-module .orderby {
+	background-color: transparent;
+	color: var(--divipro-ecom-secondary-color, #333333)!important;
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.dipro-shop-module .orderby option {
+	padding: 20px!important;
+}
+
+.dipro-shop-module .orderby option:hover {
+	color: #ffffff!important;
+	background-color: var(--divipro-ecom-secondary-color, #333333)!important;
+}
+
+.dipro-shop-module p.woocommerce-result-count {
+	color: var(--divipro-ecom-secondary-color, #333333)!important;
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+/*================= Single product page Tab module Reviews button design ==================*/
+
+.divipro_tab_horizontal_1 #respond input#submit {
+	padding: 10px 25px;
+	background-color: var(--divipro-ecom-secondary-color, #333333)!important;
+	color: #ffffff!important;
+	font-family: inherit;
+	font-weight: 400;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 2px solid var(--divipro-ecom-secondary-color, #333333)!important;
+}
+
+.divipro_tab_horizontal_1 #respond input#submit:hover {
+	background-color: var(--divipro-ecom-primary-color, #ffba00)!important;
+	border: 2px solid var(--divipro-ecom-primary-color, #ffba00)!important;
+	padding: 10px 25px;
+	color: #ffffff;
+	border-radius: 5px;
+}
+
+.divipro_tab_horizontal_1 #respond input#submit:hover:after {
+	opacity: 0;
+}
+
+@media(max-width: 550px) {
+	.dipro-switch-event-row {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.woocommerce div.product form.cart .variations td {
+	display: inline-block;
+}
+
+/**========================== Side Cart plugin ===============*/
+
+.xoo-wsc-cart-trigger {
+	cursor: pointer!important;
+}
+
+body .xoo-wsc-modal {
+	height: 0!important;
+}
+
+body .xoo-wsc-ft-btn {
+	font-size: 14px!important;
+	background: var(--divipro-ecom-secondary-color, #333333)!important;
+	color: #fff!important;
+	display: flex!important;
+	padding: 8px 10px!important;
+}
+
+body .xoo-wsc-ft-btn:hover {
+	background: var(--divipro-ecom-primary-color, #ffba00)!important;
+	padding: 8px 10px!important;
+}
+
+body .xoo-wsc-ft-btn:after {
+	display: none!important;
+}
+
+body.woocommerce-checkout .xoo-wsc-img-col {
+	display: none;
+}
+
+/*================ Cart page Design ============*/
+
+.woocommerce-cart .woocommerce .woocommerce-notices-wrapper {
+	position: absolute;
+	top: -70px;
+}
+
+.woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
+	width: 100%;
+}
+
+@media(min-width: 1100px) {
+	.woocommerce-cart .woocommerce {
+		display: flex;
+		align-items: center;
+	}
+	.woocommerce-cart .woocommerce-cart-form {
+		flex: 1 0 70%;
+		margin-right: 30px;
+	}
+	.woocommerce-cart .cart-collaterals {
+		flex: 1 0 30%;
+		margin-left: 30px;
+	}
+}
+
+.woocommerce .woocommerce-cart-form input[name="coupon_code"] {
+	background: var(--divipro-ecom-secondary-color, #333333)!important;
+}
+.woocommerce-cart table.cart td.actions .coupon .input-text{
+	width:165px!important;
+}
+.woocommerce .quantity .qty{
+	width: 2.631em!important;
+}
+.woocommerce .woocommerce-cart-form .button[name="apply_coupon"],
+.woocommerce .woocommerce-cart-form .button[name="update_cart"],
+.woocommerce .woocommerce-cart-form input[name="coupon_code"]{
+	padding:10px 15px!important;
+}
+.woocommerce .woocommerce-cart-form .button[name="apply_coupon"]:hover {
+	text-decoration: underline;
+	background-color: transparent;
+	color: var(--divipro-ecom-secondary-color, #333333)!important;
+}
+.woocommerce .woocommerce-cart-form .button[name="update_cart"] {
+	color: #fff!important;
+}
+.woocommerce .woocommerce-cart-form .button[name="update_cart"]:hover {
+	filter: brightness(115%)!important;
+	border:1px solid var(--divipro-ecom-secondary-color, #333333)!important;
+	color:var(--divipro-ecom-secondary-color, #333333)!important;
+}
+.woocommerce .checkout-button {
+	background: var(--divipro-ecom-secondary-color, #333333)!important;
+	border: 2px solid #fff!important;
+	color: #fff!important;
+}
+
+.woocommerce .woocommerce-cart-form tr td a {
+	color: #000!important;
+}
+
+.woocommerce-cart-form tr:hover {
+	background: #f5f5f5;
+}
+
+.woocommerce-page .quantity input.qty, .woocommerce .quantity input.qty {
+	background: var(--divipro-ecom-secondary-color, #333333)!important;
+}
+
+.return-to-shop {
+	margin-left: 20px!important;
+}
+
+.cart_totals h2, .shipping_calculator h2 {
+	margin-bottom: 10px;
+	font-weight: 700;
+	background: var(--divipro-ecom-secondary-color, #333333);
+	padding: 10px 10px;
+	color: #fff;
+}
+
+/*============================= Checkout Page Design =======================================*/
+
+.dipro-ecom-checkout .woocommerce-checkout {
+	display: flex;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .col2-set {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .col2-set .col-1 {
+	width: 100%;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .col2-set .col-2 {
+	width: 100%;
+	margin-top: 50px;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .col2-set .woocommerce-input-wrapper {
+	width: 100%;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .col2-set .woocommerce-input-wrapper .selection {
+	width: 100%;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .col2-set .woocommerce-input-wrapper .selection .select2-selection--single {
+	padding-top: 12px;
+	padding-bottom: 40px;
+	border: 1px solid #e0e0e0;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .col2-set .woocommerce-input-wrapper .selection .select2-selection--single .select2-selection__arrow {
+	top: 15px;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout #order_review_heading {
+	position: absolute;
+	right: 36%;
+	top: 10%;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout #order_review {
+	width: 46%;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table {
+	margin-top: 60px;
+	margin-left: 50px;
+	padding: 50px 30px;
+	background-color: #f9f9f9!important;
+	border: none;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-checkout-payment {
+	width: 100%;
+	margin-top: 60px;
+	margin-left: 50px;
+	color: var(--divipro-ecom-secondary-color, #333333);
+	padding: 50px 30px;
+	background-color: #f9f9f9!important;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-checkout-payment button.button {
+	width: 100%;
+	background-color: var(--divipro-ecom-primary-color, #ffba00);
+	border: 2px solid var(--divipro-ecom-primary-color, #ffba00);
+	color: #ffffff;
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-checkout-payment button.button:hover {
+	background-color: var(--divipro-ecom-secondary-color, #333333);
+	border: 2px solid var(--divipro-ecom-secondary-color, #333333);
+}
+
+.dipro-ecom-checkout .woocommerce-checkout .col2-set .woocommerce-input-wrapper .input-text {
+	border: 1px solid #e0e0e0;
+}
+
+.dipro-ecom-checkout .woocommerce-info a.showcoupon:hover {
+	text-decoration: underline;
+}
+
+@media(max-width: 980px) {
+	.dipro-ecom-checkout .woocommerce-checkout {
+		display: flex;
+		flex-direction: column;
+	}
+	.dipro-ecom-checkout .woocommerce-checkout .col2-set {
+		width: 100%;
+	}
+	.dipro-ecom-checkout .woocommerce-checkout #order_review {
+		width: 100%;
+	}
+	.dipro-ecom-checkout .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table {
+		margin-top: 30px;
+		margin-left: 0px;
+	}
+	.dipro-ecom-checkout .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-checkout-payment {
+		margin-top: 30px;
+		margin-left: 0px;
+	}
+	.dipro-ecom-checkout .woocommerce-checkout #order_review_heading {
+		position: inherit;
+	}
+	/*==============================================  Shop page sidebar =========================================*/
+	.dipro-shop-page-sidebar {
+		display: flex;
+		flex-direction: column;
+	}
+	.dipro-shop-page-sidebar .et_pb_widget {
+		width: 100%!important;
+	}
+}
+
+@media(max-width: 480px) {
+	.et-db #et-boc .et-l .dipro-shop-module .woocommerce ul.products li.product {
+		Width: 100%!important;
+	}
+}
+/*============================== Single Product Page ===================================*/
+
+.woocommerce div.product .product_title{
+	font-weight:700;
+}
+.woocommerce .product h2.woocommerce-loop-product__title{
+font-weight:600;
+font-size:18px!important;
+line-height:1.5em;
+}
+.woocommerce .product .related h2{
+	font-weight:700;
+	font-size:24;
+}
+/*======= Product widget list ============*/
+
+.product_list_widget li a {
+	display: flex!important;
+}
+
+.product_list_widget li a img {
+	margin-right: 10px!important;
+}
+
+.woocommerce ul.cart_list li img, .woocommerce ul.product_list_widget li img {
+	object-fit: cover;
+}
+
+.woocommerce #content input.button, .woocommerce #content input.button.alt, .woocommerce #respond input#submit, .woocommerce #respond input#submit.alt, .woocommerce-page #content input.button, .woocommerce-page #content input.button.alt, .woocommerce-page #respond input#submit, .woocommerce-page #respond input#submit.alt, .woocommerce-page a.button, .woocommerce-page a.button.alt, .woocommerce-page button.button, .woocommerce-page button.button.alt, .woocommerce-page button.button.alt.disabled, .woocommerce-page input.button, .woocommerce-page input.button.alt, .woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce button.button.alt.disabled, .woocommerce input.button, .woocommerce input.button.alt {
+	font-size: 14px;
+	font-weight: 700;
+	padding: 5px 15px!important;
+	line-height: 1.7em!important;
+	background: var(--divipro-ecom-secondary-color, #333333);
+	position: relative;
+	border: 2px solid;
+	border-radius: 3px;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+	color: #fff;
+}
+
+.woocommerce #content input.button.alt:hover, .woocommerce #content input.button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce #respond input#submit:hover, .woocommerce-page #content input.button.alt:hover, .woocommerce-page #content input.button:hover, .woocommerce-page #respond input#submit.alt:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button.alt.disabled:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button.alt:hover, .woocommerce-page input.button:hover, .woocommerce a.button.alt:hover, .woocommerce a.button:hover, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:hover, .woocommerce button.button:hover, .woocommerce input.button.alt:hover, .woocommerce input.button:hover {
+	padding: 6px 16px;
+	background: var(--divipro-ecom-primary-color, #ffba00);
+	color:#fff;
+
+}
+
+@media only screen and (min-width:981px) {
+	.dipro-my-account-module .woocommerce {
+		display: flex;
+	}
+}
+
+.woocommerce-account .dipro-my-account-module .woocommerce-MyAccount-navigation {
+	margin-right: 15px;
+}
+
+.dipro-my-account-module .woocommerce ul li {
+	list-style-type: none;
+	background: var(--divipro-ecom-secondary-color, #333333);
+	margin-top: 1px;
+	padding: 0px;
+	display: block;
+	border: 1px solid var(--divipro-ecom-secondary-color, #333333);
+	transition: 0.3s ease-in-out;
+	display: block;
+}
+
+.dipro-my-account-module .woocommerce ul li:hover, .dipro-my-account-module .woocommerce ul li.is-active {
+	background: #fff;
+}
+
+.dipro-my-account-module .woocommerce ul li a {
+	color: #fff;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	transition: 0.3s ease-in-out;
+}
+
+.dipro-my-account-module .woocommerce ul li a:hover, .dipro-my-account-module .woocommerce ul li.is-active a {
+	color: var(--divipro-ecom-secondary-color, #333333);
+}
+
+.woocommerce-account .dipro-my-account-module .woocommerce-MyAccount-content {
+	width: 100%;
+}
+
+.woocommerce-account .dipro-my-account-module .woocommerce-MyAccount-content .woocommerce-Addresses .woocommerce-Address-title address, .woocommerce-account .dipro-my-account-module .woocommerce form .form-row label {
+	text-align: left!important;
+}
+
+.woocommerce-account .dipro-my-account-module button.button, .woocommerce-page button.button, .woocommerce button.button.alt, .woocommerce button.button {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.7em!important;
+	background: var(--divipro-ecom-primary-color, #ffba00);
+	padding: 10px 15px;
+	color: #fff;
+	position: relative;
+	border: 2px solid var(--divipro-ecom-primary-color, #ffba00);
+	border-radius: 3px;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.woocommerce-account .dipro-my-account-module button.button:hover, .woocommerce-page button.button:hover, .woocommerce button.button.alt:hover, .woocommerce button.button:hover {
+	padding: 10px 16px;
+	color: #fff;
+}
+
+.woocommerce-page button.button:after, .woocommerce button.button:after {
+	line-height: inherit!important;
+	font-size: inherit!important;
+}
+
+.woocommerce-notices-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.cart-empty.woocommerce-info {
+	margin-top: 35px;
+}
+
+/*=========== Woocommerce Search Page ===================*/
+
+.dipro_search_form .dgwt-wcas-no-submit .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input {
+	padding: 15px 15px 15px 40px;
+	border-radius: 50px;
+}
+
+.dgwt-wcas-is-details .dgwt-wcas-has-img .dgwt-wcas-suggestion.dgwt-wcas-suggestion-product {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.dgwt-wcas-suggestions-wrapp.woocommerce {
+	display: flex;
+	flex-direction: column!important;
+}
+
+.dgwt-wcas-st {
+	line-height: 133%;
+}
+
+.woocommerce-page .quantity, .woocommerce .quantity {
+	width: 70px;
+}
+
+.dgwt-wcas-pd-addtc-form .add_to_cart_inline a.add_to_cart_button {
+	margin-left: 10px;
+	padding: 10px 15px!important;
+	font-size: 14px;
+	font-weight: 700;
+	color: #fff!important;
+	background: var(--divipro-ecom-secondary-color, #333333)!important;
+}
+
+.woocommerce-page a.button:after {
+	line-height: inherit!important;
+	font-size: inherit!important;
+}
+
+.dgwt-wcas-pd-addtc-form {
+	justify-content: flex-start;
+}
+
+a.dgwt-wcas-details-post-title, a.dgwt-wcas-details-product-title {
+	font-weight: 700;
+}
+
+/*========Login signup popup form=========*/
+
+.woocommerce-page a.xoo-el-action-sc.button.btn {
+	font-size: 14px;
+	padding: 0;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-color: #fff;
+	color: #fff!important;
+	font-weight: 700;
+	border: none;
+}
+.xoo-el-form-container ul.xoo-el-tabs li{
+	padding: 12px 20px!important;
+}
+.xoo-el-form-container ul.xoo-el-tabs li{
+	background:var(--divipro-ecom-secondary-color, #333333)!important;
+	color:#fff!important;	
+}
+.xoo-el-form-container ul.xoo-el-tabs li:hover{
+	background:#fff!important;
+	color:var(--divipro-ecom-secondary-color, #333333)!important;
+}
+.xoo-el-form-container ul.xoo-el-tabs li.xoo-el-active{
+	background:var(--divipro-ecom-primary-color, #ffba00)!important;
+	color:#fff;
+	border: 1px solid var(--divipro-ecom-primary-color, #ffba00)!important;
+}
+.xoo-el-form-container button.btn.button.xoo-el-action-btn{
+	background:var(--divipro-ecom-primary-color, #ffba00)!important;
+	border: 1px solid var(--divipro-ecom-primary-color, #ffba00)!important;	
+}
+.woocommerce-page a.xoo-el-action-sc.button.btn:after {
+	display: none!important;
+}
+
+/*================== Quick view design ==========================*/
+
+a.xoo-qv-button, .xoo-qv-btn-icon {
+	transition: 0.35s ease-in-out;
+}
+
+.woocommerce .product a.xoo-qv-button {
+	margin: 10px 0;
+	border: 1px solid #a7a6a6;
+	font-weight: 400;
+	border-radius: 5px;
+}
+
+.dipro-shop-module .woocommerce ul.products li.product:hover a.xoo-qv-button {
+	border-color: var(--divipro-ecom-primary-color, #ffba00);
+	color: var(--divipro-ecom-primary-color, #ffba00);
+}
+
+.dipro-shop-module .woocommerce ul.products li.product:hover .xoo-qv-btn-icon {
+	color: var(--divipro-ecom-primary-color, #ffba00);
+}
+
+.xoo-qv-main .product .xoo-qv-summary {
+	padding: 25px;
+}
+
+/*============== Wishlist design ==========================*/
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button {
+	position: absolute;
+	top: 6px;
+	right: 20px;
+	color: #fff;
+	background: var(--divipro-ecom-secondary-color, #333333);
+	padding: 5px;
+	border-radius: 5px;
+	transition: 0.3s ease-in-out;
+	z-index:999;
+}
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button:not(.cart .tinv-wishlist .tinvwl_add_to_wishlist_button) {
+	transform: translateX(20%);
+	opacity: 0;
+}
+
+.woocommerce ul.products li.product:hover .tinv-wishlist .tinvwl_add_to_wishlist_button {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+#page-container #et-boc .cart .tinv-wishlist .tinvwl_add_to_wishlist_button {
+	position: relative;
+	padding: 5px 15px 5px 10px;
+	color: #fff!important;
+	right: 0;
+}
+
+.tinv-wishlist form .product-action {
+	width: 165px;
+}
+
+.tinv-wishlist .social-buttons {
+	display: flex;
+	flex-direction: column;
+	background: var(--divipro-ecom-secondary-color, #333333);
+	text-align: left;
+}
+
+.tinv-wishlist .social-buttons>span {
+	padding: 20px;
+	width: 100%;
+	background: #fafafa;
+	font-weight: 700;
+}
+
+.tinv-wishlist .social-buttons ul {
+	padding: 0!important;
+}
+
+.tinv-wishlist .social-buttons ul li a.social {
+	color: #fff;
+	box-shadow: -1px 2px 9px 0px rgb(0 0 0 / 50%);
+	transition: 0.3s ease-in-out;
+}
+
+.tinv-wishlist .social-buttons ul li a.social:hover {
+	box-shadow: -1px 2px 9px 5px rgb(0 0 0 / 50%);
+	color: var(--divipro-ecom-primary-color, #ffba00);
+}
+
+/*================== Product Tag Design ================*/
+
+.et-db #et-boc .et-l .dipro-shop-page-sidebar .et_pb_widget .tagcloud a {
+	color: #ffffff!important;
+	font-size: 14px!important;
+	padding: 8px 8px;
+	background: var(--divipro-ecom-secondary-color, #333333);
+	display: inline-block;
+	margin-bottom: 6px;
+	border-radius: 3px;
+	margin-right: 6px;
+}
+
+.et-db #et-boc .et-l .dipro-shop-page-sidebar .et_pb_widget .tagcloud a:hover {
+	background: var(--divipro-ecom-primary-color, #ffba00);
+}
+
+/*============= Woo Tab Design ============*/
+
+.dipro-woo-tabs{
+	border:  none;
+}
+.dipro-woo-tabs ul.et_pb_tabs_controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px!important;
+	background-color: transparent;
+}
+.dipro-woo-tabs ul.et_pb_tabs_controls li{
+	border: none;
+	margin: 0 20px;
+}
+.dipro-woo-tabs ul.et_pb_tabs_controls:after{
+	border: none;
+}
+.dipro-woo-tabs ul.et_pb_tabs_controls li:before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 0%;
+	height: 2px;
+	background-color: #000000;
+	transition: 0.4s ease-in-out;
+}
+.dipro-woo-tabs ul.et_pb_tabs_controls li:hover:before{
+	width: 100%;
+	transition: 0.4s ease-in-out;
+}
+.dipro-woo-tabs ul.et_pb_tabs_controls li a{
+	padding: 0;
+	padding: 10px 5px;
+}
+.dipro-woo-tabs ul.et_pb_tabs_controls li.et_pb_tab_active:before{
+	width: 100%;
+}
+
+/*=============== Woo add to cart ===============*/
+
+.et_pb_wc_add_to_cart.et_pb_module .et_pb_module_inner form.cart .variations tbody{
+	display: flex;
+	justify-content: space-between;
+}
+.et_pb_wc_add_to_cart.et_pb_module .et_pb_module_inner form.cart .variations tbody tr{
+	display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+/*================= woo product image gallaery design ================*/
+
+.dipro-woo-product-gallery-image .woocommerce-product-gallery{
+	display: flex;
+	flex-direction: row-reverse;
+}
+.dipro-woo-product-gallery-image .woocommerce-product-gallery ol.flex-control-nav{
+	display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    width: 50%;
+	margin-top: 0px!important;
+}
+.dipro-woo-product-gallery-image .woocommerce-product-gallery ol.flex-control-nav li{
+	width: 90%!important;
+	border-radius: 5px;
+}
+
+.dipro-shop-page-sidebar .woocommerce ul.product_list_widget li a{
+	display: block!important;
+}
+.dipro-shop-page-sidebar .woocommerce ul.product_list_widget li img{
+	float: left;
+    margin-left: 4px;
+    width: 90px;
+    height: auto;
+    box-shadow: none;
+    margin-right: 20px!important;
+    border-radius: 5px;
+}
+
+/*=================== Shop Module - 2 Design ====================*/
+
+.dipro-shop-module-2 .woocommerce ul.products li.product:hover a .et_shop_image img{
+	transform: scale(1.2, 1.2);
+	transition: all 0.4s ease-in-out;
+}
+.dipro-shop-module-2 .woocommerce ul.products li.product a .et_shop_image{
+	overflow: hidden;
+	transition: all 0.4s ease-in-out;
+	border-radius: 5px;
+}
+.dipro-shop-module-2 .woocommerce ul.products li.product a .et_shop_image img{
+	transition: all 0.4s ease-in-out;
+}
+.dipro-shop-module-2 ul.products li.product a .et_shop_image img{
+	margin: 0!important;
+}
+
+.dipro-shop-module-2 .woocommerce ul.products li.product .onsale{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+	border-radius: 100%!important;
+}
+
+/*============================== Quick view design ==========================*/
+
+.qv-design-2 a.xoo-qv-button, .xoo-qv-btn-icon {
+	transition: 0.5s ease-in-out;
+}
+
+.qv-design-2 .woocommerce .product a.xoo-qv-button {
+	padding: 8px;
+	margin: 10px 0;
+	border: none;
+	color: #fff;
+	background: var(--divipro-ecom-secondary-color, #333333);
+	font-weight: 400;
+	border-radius: 5px;
+	position: absolute;
+	top: 55px;
+	right: 20px;
+	transform: translateX(20%);
+	opacity: 0;
+	transition: 0.7s ease-in-out;
+}
+
+.qv-design-2 .woocommerce ul.products li.product:hover a.xoo-qv-button {
+	transform: translateX(0);
+	opacity: 1;
+	transition: 0.7s ease-in-out;
+}
+
+.qv-design-2 .xoo-qv-main .product .xoo-qv-summary {
+	padding: 25px;
+}
+.qv-design-2 .woocommerce .product a.xoo-qv-button .xoo-qv-btn-icon{
+	color: #ffffff;
+}
